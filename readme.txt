@@ -1,0 +1,37 @@
+# 🔬 Cell Counting & Cell Segmentation
+
+------------------------------------------------------------------------
+
+## **GOAL: CELL COUNTING WITH DEEP LEARNING**
+
+Deep learning will be used to count the number of cells surviving an
+intervention (e.g., anticancer compound application). This automates
+tracking of living cells.
+
+------------------------------------------------------------------------
+
+## **DATA SOURCE**
+
+**Source:** Broad Bioimage Benchmark Collection
+(**BBBC005_v1_ground_truth**)
+
+The cells from the data set are **Cell Lines**: lab-cultivated cells
+grown stably from a given source.
+
+**Image Format:** NumPy array: *(i images, N height, M width, 3 RGB)*
+
+Each image filename contains the experimental variables, which are
+extracted to define the dataset.
+
+**Example Structure:**\
+`SIMCEPImages_well_Ccells_Fblur_ssamples_wstain.TIF`
+
+-   **well:** Standard 384-well plate format *(Rows A-P, Cols 1-24)*\
+-   **cells:** Number of cells in the image *(Range: 1--100)*\
+-   **blur:** Amount of focus blur applied *(Range: 1--48)*\
+-   **sample:** Number of samples *(Range: 1--25)*\
+-   **stain:** Stain type *(1 = Cell Body, 2 = Nuclei)*
+
+We can interpolate the filename to extract each file's **cells** value
+and use that as each record's target. By analyzing the content of each
+image, the model can learn what a cell looks like and how to count them.
