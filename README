@@ -1,31 +1,35 @@
-Cell Counting & Cell Segmentation
+🔬 PROJECT OVERVIEW: Cell Counting & Cell Segmentation
 
 ---
 
-GOAL: CELL COUNTING WITH DEEP LEARNING
-Deep learning is used to count the number of cells surviving an intervention (e.g., anticancer compound application).
-This automates tracking of living cells.
+## **GOAL: CELL COUNTING WITH DEEP LEARNING**
+
+Deep learning will be used to count the number of cells surviving an intervention (e.g., anticancer compound application). This **automates tracking of living cells**.
+
+* The cells from the data set are **Cell Lines**: lab-cultivated cells grown stably from a given source.
 
 ---
 
-DATA SOURCE: BBBC005_v1_ground_truth
-Source: Broad Bioimage Benchmark Collection.
-Image Format: NumPy array, usually (i images, N height, M width, 3 RGB).
+## **DATA SOURCE**
+
+Source: **Broad Bioimage Benchmark Collection (BBBC005_v1_ground_truth)**.
+
+Image Format: NumPy array, usually structured as:
+**(i images, N height, M width, 3 RGB)**
 
 ---
 
-DATA COLLECTION CONTEXT: FILENAME METADATA
+## **DATA COLLECTION CONTEXT: FILENAME METADATA**
 
-The cells from the data set are Cell Lines: lab-cultivated cells grown stably from a given source.
-Each image filename contains the cells experimental variables.
-Example Structure: SIMCEPImages_well_Ccells_Fblur_ssamples_wstain.TIF
+Each image filename contains the experimental variables, which are extracted to define the dataset.
 
-VARIABLES:
-well: 384-well plate format (Rows A-P, Cols 1-24).
-cells: NUMBER OF CELLS IN THE IMAGE. (Range: 1-100)
-blur: Amount of focus blur applied. (Range: 1-48)
-sample: Number of samples. (Range: 1-25)
-stain: Stain type (1=Cell Body, 2=Nuclei). (Range: 1 or 2)
+Example Structure: **SIMCEPImages\_well\_Ccells\_Fblur\_ssamples\_wstain.TIF**
 
-The 'cells' variable is the target output (y) for the cell counting model.
+### **VARIABLES**
 
+* **well**: Standard 384-well plate format (Rows A-P, Cols 1-24).
+* **cells**: **NUMBER OF CELLS IN THE IMAGE**. (Range: 1-100)
+    * **THIS IS THE TARGET OUTPUT (y) FOR THE MODEL.**
+* **blur**: Amount of focus blur applied. (Range: 1-48)
+* **sample**: Number of samples. (Range: 1-25)
+* **stain**: Stain type (1=Cell Body, 2=Nuclei). (Range: 1 or 2).
