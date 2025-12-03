@@ -58,7 +58,7 @@ Our goal of cell counting can be achieved by string interpolating the filename i
 the images neede by hand. 
 
 ## Data - Cell Segmentaion
-**BBBC005_v1_ground_truth** is a folder containing human generated cell segmentations for each image in **BBBC005_v1_images**.
+**BBBC005_v1_ground_truth** is a folder containing human generated cell segmentations for teh first 1200 images in **BBBC005_v1_images**.
 Our goal is to use these cell segmentation images as labels to train the our neural network, with BBBC005_v1_images as our records.
 
-We can use the libraryu ImageDataset from DeepChem to store each segmentation image as storable information. 
+We can use the library ImageDataset from DeepChem to store each segmentation image as storable information. 
